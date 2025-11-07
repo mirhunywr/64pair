@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.8, user-scalable=no" />
+  <title>𝑸𝑨𝑫𝑬𝑬𝑹-𝑨𝑰 // ONLINE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0da6e4c.js" crossorigin="anonymous"></script>
+  <style>
+    /* Cyberpunk Neon Theme */
+    :root {
+      --primary-neon: #00ffff; /* Cyan/Aqua */
+      --secondary-neon: #ff00ff; /* Magenta/Fuchsia */
+      --bg-dark: #070a1a; /* Deep Navy/Black */
+      --accent-glow: #00ff9f; /* Neon Green/Mint for accents */
+      --glass: rgba(255, 255, 255, 0.05);
+      --border-color: #1a3a4a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Share Tech Mono', monospace; /* Monospace for that terminal feel */
+      background-color: var(--bg-dark);
+      color: var(--primary-neon);
+      display: flex;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* --- Sidebar (Navigation) --- */
+    .sidebar {
+      width: 280px;
+      background: #0d1226; /* Darker than body */
+      padding: 30px 20px;
+      min-height: 100vh;
+      border-right: 2px solid var(--border-color);
+      box-shadow: 5px 0 30px var(--primary-neon) 
+                  , -5px 0 30px var(--secondary-neon); 
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--secondary-neon);
+      box-shadow: 0 0 20px var(--secondary-neon), 
+                  0 0 5px var(--secondary-neon) inset;
+      transition: transform 0.4s;
+    }
+    
+    .logo img:hover {
+      transform: scale(1.05) rotate(3deg);
+    }
+
+    .sidebar h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary-neon);
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px var(--primary-neon);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 15px 0;
+      padding: 15px;
+      color: var(--primary-neon);
+      background: var(--glass);
+      border: 1px solid var(--border-color);
+      transition: 0.3s ease;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+    
+    .nav-link i {
+      color: var(--accent-glow);
+    }
+
+    .nav-link:hover {
+      background: rgba(0, 255, 255, 0.15);
+      border-left: 5px solid var(--accent-glow);
+      box-shadow: 0 0 15px var(--accent-glow);
+      transform: translateX(5px);
+    }
+
+    /* --- Main Content --- */
+    .main-content {
+      flex: 1;
+      padding: 40px 60px;
+      animation: pulseGlow 10s infinite alternate; /* Subtle background animation */
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.1); }
+      100% { box-shadow: 0 0 25px rgba(255, 0, 255, 0.2); }
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: var(--secondary-neon);
+      text-shadow: 0 0 15px var(--secondary-neon), 0 0 5px #fff;
+      font-weight: 700;
+      border-bottom: 2px dashed var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 15px;
+      font-size: 1rem;
+      color: var(--accent-glow);
+      border: 1px solid var(--accent-glow);
+      box-shadow: 0 0 10px var(--accent-glow);
+      margin-bottom: 40px;
+      font-weight: 600;
+      background: rgba(0, 255, 159, 0.05);
+      border-radius: 5px;
+    }
+    
+    .status-bar i {
+        margin-right: 5px;
+        color: var(--secondary-neon);
+    }
+
+    .section {
+      margin-bottom: 50px;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 0 20px var(--primary-neon) 
+                  , 0 0 5px var(--primary-neon) inset;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .section h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      color: var(--primary-neon);
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px var(--primary-neon);
+      border-left: 4px solid var(--primary-neon);
+      padding-left: 15px;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #0f1f2e;
+      color: var(--primary-neon);
+      padding: 18px;
+      border: 1px solid var(--accent-glow);
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      background: var(--accent-glow);
+      color: var(--bg-dark);
+      border-color: var(--primary-neon);
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px var(--accent-glow);
+    }
+    
+    .btn i {
+      transition: color 0.3s;
+    }
+    
+    .btn:hover i {
+      color: var(--bg-dark);
+    }
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      opacity: 0.6;
+      font-size: 0.9rem;
+      color: var(--primary-neon);
+      border-top: 1px dashed var(--border-color);
+      padding-top: 20px;
+    }
+    
+    .footer a {
+        color: var(--secondary-neon);
+        text-decoration: none;
+    }
+    .footer a:hover {
+        opacity: 1;
+        text-shadow: 0 0 5px var(--secondary-neon);
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="https://files.catbox.moe/2857dd.jpg" alt="Portal Logo">
+    </div>
+    <h2>𝑸𝑨𝑫𝑬𝑬𝑹-𝑨𝑰</h2>
+    <a href="#access" class="nav-link"><i class="fas fa-satellite-dish"></i> Initiate Access</a>
+    <a href="#dev" class="nav-link"><i class="fas fa-terminal"></i> Dev Console</a>
+  </div>
+
+  <div class="main-content">
+    <h1><i class="fas fa-bolt"></i> 𝑸𝑨𝑫𝑬𝑬𝑹-𝑨𝑰 </h1>
+
+    <div class="status-bar">
+      <div class="time" id="time"><i class="far fa-clock"></i> 00:00:00</div>
+      <div class="date" id="date"><i class="far fa-calendar-alt"></i> 00/00/0000</div>
+      <div class="battery" id="battery-status">
+        <i class="fas fa-battery-half"></i> Loading Power...
+      </div>
+    </div>
+
+    <div class="section" id="access">
+      <h3>Access Protocol <i class="fas fa-fingerprint"></i></h3>
+      <div class="btn-grid">
+        <button class="btn" onclick="window.open('/qr')"><i class="fas fa-qrcode"></i> QR Code Link</button>
+        <button class="btn" onclick="window.open('/pair')"><i class="fas fa-code-branch"></i> Pair Code Link</button>
+      </div>
+    </div>
+
+    <div class="section" id="dev">
+      <h3>System Directory <i class="fas fa-microchip"></i></h3>
+      <div class="btn-grid">
+        <button class="btn" onclick="window.open('https://github.com/QadeerXTech')"><i class="fab fa-github"></i> View GitHub</button>
+        <button class="btn" onclick="window.open('https://whatsapp.com/channel/0029VbAkAEhCRs1g8MmyEJ2K')"><i class="fab fa-whatsapp"></i> WhatsApp Channel</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <a href="https://github.com/QadeerXTech" target="_blank">Codename: Qadeer X</a> | System Status: **ONLINE**
+      <br>&copy; 2025 QADEER-AI. All Rights Reserved.
+    </div>
+  </div>
+
+  <script>
+    function updateTime() {
+      const time = new Date();
+      document.getElementById('time').innerHTML = `<i class="far fa-clock"></i> ${time.toLocaleTimeString()}`;
+      document.getElementById('date').innerHTML = `<i class="far fa-calendar-alt"></i> ${time.toLocaleDateString()}`;
+    }
+
+    function updateBatteryStatus() {
+      if ('getBattery' in navigator) {
+          navigator.getBattery().then(function(battery) {
+            let batteryLevel = Math.round(battery.level * 100);
+            let charging = battery.charging;
+            let icon = 'fas fa-battery-empty';
+            
+            if (batteryLevel > 75) icon = 'fas fa-battery-full';
+            else if (batteryLevel > 50) icon = 'fas fa-battery-three-quarters';
+            else if (batteryLevel > 25) icon = 'fas fa-battery-half';
+            else if (batteryLevel > 5) icon = 'fas fa-battery-quarter';
+            
+            if (charging) icon = 'fas fa-bolt'; // Show bolt when charging
+
+            let statusText = `${batteryLevel}% | ${charging ? 'Charging' : 'Discharging'}`;
+            document.getElementById('battery-status').innerHTML = `<i class="${icon}"></i> ${statusText}`;
+          }).catch(() => {
+              // Fallback if battery API is not available (like in many desktop browsers)
+              document.getElementById('battery-status').innerHTML = `<i class="fas fa-power-off"></i> Power Source: Connected`;
+          });
+      } else {
+        document.getElementById('battery-status').innerHTML = `<i class="fas fa-power-off"></i> Power Source: Connected`;
+      }
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime(); // Initial call
+    updateBatteryStatus();
+    // Update battery less frequently
+    setInterval(updateBatteryStatus, 60000); 
+  </script>
+</body>
+</html>
